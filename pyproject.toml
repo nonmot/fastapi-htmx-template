@@ -1,0 +1,11 @@
+[project]
+name = "fastapi-htmx-template"
+version = "1.0.0"
+description = "Template for FastAPI + HTMX"
+requires-python = ">=3.12"
+
+[tool.uv.workspace]
+members = [
+  "apps/web",
+  "packages/shared",
+]
