@@ -7,15 +7,12 @@ from models.users import User, in_memory_users
 
 router = APIRouter()
 
-@router.get(
-    "/",
-    response_class=JSONResponse
-)
-def index(
-    name: str = "anonymous"
-):
+
+@router.get("/", response_class=JSONResponse)
+def index(name: str = "anonymous"):
     message = greeting(name)
     return JSONResponse({"message": message})
+
 
 @router.get(
     "/users",

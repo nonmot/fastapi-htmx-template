@@ -11,19 +11,15 @@ router = APIRouter()
 BASE_DIR = Path(__file__).resolve().parent.parent
 templates = Jinja2Templates(directory=BASE_DIR / "templates")
 
+
 @router.get(
     "/",
     response_class=HTMLResponse,
 )
-def index(
-    request: Request,
-    name: str = "anonymous"
-) -> HTMLResponse:
+def index(request: Request, name: str = "anonymous") -> HTMLResponse:
     message = greeting(name)
-    return templates.TemplateResponse(
-        "pages/index.html",
-        { "request": request, "message": message }
-    )
+    return templates.TemplateResponse("pages/index.html", {"request": request, "message": message})
+
 
 @router.get(
     "/users",
@@ -32,7 +28,4 @@ def index(
 def users(
     request: Request,
 ) -> HTMLResponse:
-    return templates.TemplateResponse(
-        "partials/list_users.html",
-        { "request": request, "users": in_memory_users }
-    )
+    return templates.TemplateResponse("partials/list_users.html", {"request": request, "users": in_memory_users})

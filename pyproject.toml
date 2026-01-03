@@ -9,3 +9,16 @@ members = [
   "apps/web",
   "packages/shared",
 ]
+
+[tool.ruff]
+line-length = 120
+exclude = [
+  ".git",
+  ".venv",
+  "__pycache__",
+]
+
+[dependency-groups]
+dev = [
+    "ruff>=0.14.10",
+]
