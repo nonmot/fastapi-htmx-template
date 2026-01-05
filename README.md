@@ -21,6 +21,18 @@ make run
 
 ブラウザで `http://127.0.0.1:8000` を開いてください。
 
+## Notebook（カーネル登録）
+```bash
+make notebook-init
+# 直接実行する場合:
+# uv run python -m ipykernel install --user --name repo --display-name "Python (repo)"
+```
+
+## Notebook（起動）
+```bash
+uv run jupyter lab --notebook-dir notebooks
+```
+
 ## エンドポイント
 - `GET /` : HTML（Jinja2）
 - `GET /users` : HTMX 用パーシャル

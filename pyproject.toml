@@ -10,6 +10,9 @@ members = [
   "packages/shared",
 ]
 
+[tool.uv.sources]
+shared = { workspace = true }
+
 [tool.ruff]
 line-length = 120
 exclude = [
@@ -21,4 +24,10 @@ exclude = [
 [dependency-groups]
 dev = [
     "ruff>=0.14.10",
+]
+
+notebooks = [
+  "jupyter",
+  "ipykernel",
+  "shared"
 ]
